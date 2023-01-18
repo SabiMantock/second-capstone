@@ -1,4 +1,77 @@
+
 body {
   box-sizing: border-box;
   margin: 0;
+}
+
+.topnav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.topnav a.icon {
+  display: none;
+}
+
+#myLinks a {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    padding: 0;
+  }
+
+  #myLinks {
+    padding: 50px 0;
+  }
+
+  .topnav #myLinks {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  #myLinks a {
+    margin: 0;
+  }
+
+  .active {
+    background-color: #04aa6d;
+    color: white;
+  }
 }
