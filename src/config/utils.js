@@ -13,18 +13,4 @@ const fetchLikes = async () => {
   return data;
 };
 
-// const postLike = async (id) => {
-//   const response = await fetch(LIKESURL, {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json',
-//     },
-//     body: JSON.stringify({ item_id: id }),
-//   });
-
-//   const data = response.text();
-//   const { result } = data;
-//   return result;
-// };
-
 export { fetchMovieData, fetchLikes };
