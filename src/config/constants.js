@@ -1,3 +1,5 @@
-const URL = 'https://search.imdbot.workers.dev/?q=StarTrek';
+const MOVIESURL = 'https://search.imdbot.workers.dev/?q=StarTrek';
 
-export default URL;
+const LIKESURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/jJIuvsLaYKV5GjXFfUpg/likes';
+
+export { MOVIESURL, LIKESURL };

@@ -1,24 +1,31 @@
-import fetchMovieData from '../config/utils.js';
-import like from '../assets/likeIcon.png';
+import { fetchLikes, fetchMovieData } from '../config/utils.js';
 
 const list = document.getElementById('list');
+
+const updateLikes = async () => {
+  const data = await fetchLikes();
+  data.forEach((item) => {
+    const likeCount = document.getElementById(`count-${item.item_id}`);
+    if (likeCount) {
+      likeCount.innerHTML = `${item.likes}`;
+    }
+  });
+};
 
 const render = async () => {
   const data = await fetchMovieData();
   list.innerHTML = '';
-  data.forEach(({ '#TITLE': title, '#IMG_POSTER': poster }) => {
+  data.forEach(({ '#TITLE': title, '#IMG_POSTER': poster, '#IMDB_ID': id }) => {
     list.innerHTML += `
-            <li>
+            <li id=${id} class="list">
                 <div class='image-wrapper'>
                     <img src=${poster} alt='movie' class="img"/>
                 </div>
                 <div class="des">
                     <p>${title}</p>
                     <div class='like'>
-                        <div>
-                            <img src=${like} alt='like'/>
-                        </div>
-                        <p>1 like</p>
+                        
+                        <p id=count-${id}></p>
                     </div>
                 </div>
                 <div>
@@ -28,6 +35,8 @@ const render = async () => {
 
       `;
   });
+
+  updateLikes();
 };
 
 export default render;
