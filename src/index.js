@@ -1,3 +1,4 @@
+import render from './modules/render.js';
 import './style.css';
 
 const burger = document.querySelector('.burger-menu');
@@ -13,3 +14,5 @@ burger.addEventListener('click', () => {
     icon.classList.replace('fa-bars', 'fa-close');
   }
 });
+
+document.addEventListener('DOMContentLoaded', render);
