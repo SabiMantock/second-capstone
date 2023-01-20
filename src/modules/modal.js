@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { postComment, getComments } from '../config/utils.js';
+import counter from './counter.js';
 
 const popup = document.querySelector('#myModal');
 const popupContent = document.querySelector('.modal-content');
@@ -19,6 +20,7 @@ const renderCommments = (movie) => {
               </div>
               
             </div>
+            <h3 class="comment-count"></h3>
             <ul class="comment-list">
             </ul>
             <div class="form-cont">
@@ -66,6 +68,8 @@ const renderCommments = (movie) => {
   const commentRender = async () => {
     const comments = await getComments(movie.imdbId);
     commentList.innerHTML = '';
+    const commentCount = document.querySelector('.comment-count');
+    commentCount.innerHTML += `Comments(${counter(comments)})`;
     comments.forEach(({ username, comment }) => {
       commentList.innerHTML += `
       <li>
