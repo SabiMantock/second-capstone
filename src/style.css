@@ -17,12 +17,18 @@ ul {
   gap: 20px;
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
 input,
-textarea{
+textarea {
   width: 100%;
 }
 
@@ -80,11 +86,9 @@ textarea{
   color: #fff;
 }
 
-.cBtn{
+.cBtn {
   padding: 10px 20px;
 }
-
-
 
 .btn:hover {
   background-color: #ddd;
@@ -112,14 +116,14 @@ textarea{
   width: 80%;
   border-radius: 20px;
   overflow: auto;
-  height: 500px
+  height: 500px;
 }
 
-.form-cont{
+.form-cont {
   padding: 20px 0;
 }
 
-#form{
+#form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

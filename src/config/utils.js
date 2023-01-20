@@ -55,7 +55,6 @@ const postComment = async (comment) => {
 const selectMovieDetails = async (id) => {
   const data = await fetchMovieDeets(id);
   renderCommments(data);
-  console.log(data);
 };
 
 export {

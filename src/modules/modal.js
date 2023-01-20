@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-// import { postComment } from '../config/utils.js';
+import { postComment } from '../config/utils.js';
 
 const popup = document.querySelector('#myModal');
 const popupContent = document.querySelector('.modal-content');
@@ -43,21 +43,21 @@ const renderCommments = (movie) => {
     popup.style.display = 'none';
   });
 
-  // const form = document.getElementById('form');
-  // form.addEventListener('submit', async (event) => {
-  //   event.preventDefault();
-  //   const name = document.getElementById('input').value;
-  //   const comment = document.getElementById('input').value;
-  //   if (name === '' || comment === '') {
-  //     console.log(name, comment);
-  //     postComment({
-  //       item_id: movie.imdbId,
-  //       username: name,
-  //       comment,
-  //     });
-  //   }
-  //   form.reset();
-  // });
+  const form = document.getElementById('form');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const name = document.getElementById('input').value;
+    const comment = document.getElementById('input').value;
+    if (name === '' || comment === '') {
+      console.log(name, comment);
+      postComment({
+        item_id: movie.imdbId,
+        username: name,
+        comment,
+      });
+    }
+    form.reset();
+  });
 };
 
 export default renderCommments;
