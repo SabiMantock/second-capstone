@@ -1,3 +1,4 @@
+/* eslint-disable */
 import renderCommments from '../modules/modal.js';
 import {
   COMMENTSURL,
