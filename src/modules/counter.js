@@ -1,6 +1,3 @@
-const counter = (data) => {
-  const movie = document.getElementById('movie');
-  movie.innerHTML += `(${data.length})`;
-};
+const counter = (data) => data.length;
 
 export default counter;

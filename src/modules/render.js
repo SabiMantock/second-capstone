@@ -3,6 +3,7 @@ import like from '../assets/likeIcon.png';
 import counter from './counter.js';
 
 const list = document.getElementById('list');
+const movie = document.getElementById('movie');
 
 const updateLikes = async () => {
   const data = await fetchLikes();
@@ -16,7 +17,7 @@ const updateLikes = async () => {
 
 const render = async () => {
   const data = await fetchMovieData();
-  list.innerHTML = '';
+  movie.innerHTML += `(${counter(data)})`;
   counter(data);
   data.forEach(({ '#TITLE': title, '#IMG_POSTER': poster, '#IMDB_ID': id }) => {
     list.innerHTML += `
