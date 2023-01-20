@@ -1,4 +1,6 @@
-import { fetchLikes, fetchMovieData, postLike } from '../config/utils.js';
+import {
+  fetchLikes, fetchMovieData, postLike,
+} from '../config/utils.js';
 import like from '../assets/likeIcon.png';
 import counter from './counter.js';
 
@@ -35,7 +37,7 @@ const render = async () => {
                     </div>
                 </div>
                 <div>
-                    <button type='button' class='btn'> Comment </button>
+                    <button type='button' class='btn'id=${id}> Comment </button>
                 </div>
             </li>
 
@@ -53,25 +55,20 @@ const render = async () => {
     });
   });
 
+  // const commentBtns = document.querySelectorAll('.btn');
+
   // const popup = document.querySelector('#myModal');
   // const popupContent = document.querySelector('.modal-content');
   // const commentBtns = document.querySelectorAll('.comment-btn');
 
-  // commentBtns.forEach((btn, i) => {
-  //   btn.addEventListener('click', () => {
-  //     popup.style.display = 'flex';
-  //     popupContent.innerHTML = `<div class="popup">
-  //             <i class="fa fa-times fa-3x" aria-hidden="true"></i>
-  //         <div class="movie-data"><img class="pop-img" src="${poster}" alt="movie"/>
-  //         <div><h1>${title}</h1></div>
-  //         </div></div>`;
-
-  //     const close = document.querySelector('.fa-times');
-  //     close.addEventListener('click', () => {
-  //       popup.style.display = 'none';
-  //     });
-  //   });
+  // commentBtns.forEach((btn) => {
+  // btn.addEventListener('click', () => {
+  // const id = btn.getAttribute('id');
+  // selectMovieDetails(id);
   // });
+  // });
+
+  // console.log(({ commentBtns }));
 };
 
 export default render;
