@@ -62,6 +62,10 @@ p {
   gap: 5px;
 }
 
+.likeBtn {
+  cursor: pointer;
+}
+
 .btn {
   width: 100%;
   border: none;
