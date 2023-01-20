@@ -56,7 +56,6 @@ const render = async () => {
   });
 
   const commentBtns = document.querySelectorAll('.btn');
-
   commentBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const id = btn.getAttribute('id');
