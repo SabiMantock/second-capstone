@@ -1,5 +1,6 @@
 import { fetchLikes, fetchMovieData, postLike } from '../config/utils.js';
 import like from '../assets/likeIcon.png';
+import counter from './counter.js';
 
 const list = document.getElementById('list');
 
@@ -16,6 +17,7 @@ const updateLikes = async () => {
 const render = async () => {
   const data = await fetchMovieData();
   list.innerHTML = '';
+  counter(data);
   data.forEach(({ '#TITLE': title, '#IMG_POSTER': poster, '#IMDB_ID': id }) => {
     list.innerHTML += `
             <li id=${id} class="list">
