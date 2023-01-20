@@ -1,4 +1,4 @@
-// import renderCommments from '../modules/modal.js';
+import renderCommments from '../modules/modal.js';
 import { LIKESURL, MOVIESURL } from './constants.js';
 
 const fetchMovieData = async () => {
@@ -28,19 +28,18 @@ const postLike = async (id) => {
   return result;
 };
 
-// const selectMovieDetails = async (id) => {
-//   const data = await fetchMovieData();
-//   console.log(data);
-//   data.forEach((movie) => {
-//     if (movie['#IMDB_ID'] === id) {
-//       renderCommments(movie);
-//     }
-//   });
-// };
+const selectMovieDetails = async (id) => {
+  const data = await fetchMovieData();
+  data.forEach((movie) => {
+    if (movie['#IMDB_ID'] === id) {
+      renderCommments(movie);
+    }
+  });
+};
 
 export {
   fetchMovieData,
   fetchLikes,
   postLike,
-  // selectMovieDetails,
+  selectMovieDetails,
 };

@@ -1,5 +1,5 @@
 import {
-  fetchLikes, fetchMovieData, postLike,
+  fetchLikes, fetchMovieData, postLike, selectMovieDetails,
 } from '../config/utils.js';
 import like from '../assets/likeIcon.png';
 import counter from './counter.js';
@@ -55,20 +55,14 @@ const render = async () => {
     });
   });
 
-  // const commentBtns = document.querySelectorAll('.btn');
+  const commentBtns = document.querySelectorAll('.btn');
 
-  // const popup = document.querySelector('#myModal');
-  // const popupContent = document.querySelector('.modal-content');
-  // const commentBtns = document.querySelectorAll('.comment-btn');
-
-  // commentBtns.forEach((btn) => {
-  // btn.addEventListener('click', () => {
-  // const id = btn.getAttribute('id');
-  // selectMovieDetails(id);
-  // });
-  // });
-
-  // console.log(({ commentBtns }));
+  commentBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('id');
+      selectMovieDetails(id);
+    });
+  });
 };
 
 export default render;
