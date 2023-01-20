@@ -47,6 +47,23 @@ const renderCommments = (movie) => {
     popup.style.display = 'none';
   });
 
+  const commentList = document.querySelector('.comment-list');
+
+  const commentRender = async () => {
+    const comments = await getComments(movie.imdbId);
+    commentList.innerHTML = '';
+    const commentCount = document.querySelector('.comment-count');
+    commentCount.innerHTML = `Comments(${counter(comments)})`;
+    comments.forEach(({ username, comment }) => {
+      commentList.innerHTML += `
+      <li>
+      ${username}: ${comment}
+      </li>
+      `;
+    });
+  };
+  commentRender();
+
   const form = document.getElementById('form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -58,27 +75,12 @@ const renderCommments = (movie) => {
         username: name,
         comment,
       });
+      commentRender();
     }
     form.reset();
   });
 
   // display comments
-  const commentList = document.querySelector('.comment-list');
-
-  const commentRender = async () => {
-    const comments = await getComments(movie.imdbId);
-    commentList.innerHTML = '';
-    const commentCount = document.querySelector('.comment-count');
-    commentCount.innerHTML += `Comments(${counter(comments)})`;
-    comments.forEach(({ username, comment }) => {
-      commentList.innerHTML += `
-      <li>
-      ${username}: ${comment}
-      </li>
-      `;
-    });
-  };
-  commentRender();
 };
 
 export default renderCommments;
