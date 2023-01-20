@@ -23,10 +23,10 @@ const renderCommments = (movie) => {
               <h3>Add Comments</h3>
               <form id='form' action=''>
                 <div class='input'>
-                  <input type="text" placeholder="Name" id='input'>
+                  <input type="text" placeholder="Name" id='name'>
                 </div>
                 <div class='text'>
-                  <textarea name="comment" id="text" cols="30" rows="10" placeholder="your comment here..."></textarea>
+                  <textarea name="comment" id="comment" cols="30" rows="10" placeholder="your comment here..."></textarea>
                 </div>
                 <div>
                   <button type="submit" class="btn cBtn">Comment</button>
@@ -46,9 +46,9 @@ const renderCommments = (movie) => {
   const form = document.getElementById('form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const name = document.getElementById('input').value;
-    const comment = document.getElementById('input').value;
-    if (name === '' || comment === '') {
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+    if (name !== '' || comment !== '') {
       postComment({
         item_id: movie.imdbId,
         username: name,
