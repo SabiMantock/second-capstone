@@ -69,7 +69,7 @@ const renderCommments = (movie) => {
     const comments = await getComments(movie.imdbId);
     commentList.innerHTML = '';
     const commentCount = document.querySelector('.comment-count');
-    commentCount.innerHTML +=`Comments(${counter(comments)})`
+    commentCount.innerHTML += `Comments(${counter(comments)})`;
     comments.forEach(({ username, comment }) => {
       commentList.innerHTML += `
       <li>
