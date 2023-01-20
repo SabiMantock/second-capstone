@@ -1,4 +1,5 @@
-import { fetchLikes, fetchMovieData } from '../config/utils.js';
+import { fetchLikes, fetchMovieData, postLike } from '../config/utils.js';
+import like from '../assets/likeIcon.png';
 
 const list = document.getElementById('list');
 
@@ -24,7 +25,9 @@ const render = async () => {
                 <div class="des">
                     <p>${title}</p>
                     <div class='like'>
-                        
+                        <div class='likeBtn' id=like-${id}>
+                            <img src=${like} alt='like'/>
+                        </div>
                         <p id=count-${id}></p>
                     </div>
                 </div>
@@ -37,6 +40,15 @@ const render = async () => {
   });
 
   updateLikes();
+
+  const btn = document.querySelectorAll('.likeBtn');
+  btn.forEach((btn, index) => {
+    btn.addEventListener('click', async () => {
+      const id = data[index]['#IMDB_ID'];
+      await postLike(id);
+      updateLikes();
+    });
+  });
 };
 
 export default render;
