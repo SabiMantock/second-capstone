@@ -54,6 +54,17 @@ const postComment = async (comment) => {
   return result;
 };
 
+const getComments =  async (id) => {
+  const response = await fetch(COMMENTSURL + `?item_id=${id}`,{
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+
 const selectMovieDetails = async (id) => {
   const data = await fetchMovieDeets(id);
   renderCommments(data);
@@ -65,4 +76,5 @@ export {
   postLike,
   selectMovieDetails,
   postComment,
+  getComments,
 };
