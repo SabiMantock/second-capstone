@@ -64,17 +64,16 @@ const renderCommments = (movie) => {
   const commentList = document.querySelector('.comment-list');
 
   const commentRender = async () => {
-    const comments= await getComments(movie.imdbId);
-    console.log(comments);
-    commentList.innerHTML ='';
-    comments.forEach(({username,comment}) => {
-      commentList.innerHTML+=`
+    const comments = await getComments(movie.imdbId);
+    commentList.innerHTML = '';
+    comments.forEach(({ username, comment }) => {
+      commentList.innerHTML += `
       <li>
       ${username}: ${comment}
       </li>
       `;
     });
-  }
+  };
   commentRender();
 };
 
