@@ -50,6 +50,7 @@ const postComment = async (comment) => {
   });
   const data = response.json();
   const { result } = data;
+  console.log(result,comment)
   return result;
 };
 
