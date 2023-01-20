@@ -12,6 +12,13 @@ const renderCommments = (movie) => {
                     <h1>${movie['#TITLE']}</h1>
                 </div>
             </div>
+            <div class="form-cont">
+            <form>
+            <input type="text" placeholder="Name">
+            <textarea name="comment" id="" cols="30" rows="10" placeholder="your comment here..."></textarea>
+            <button type="submit">Comment</button>
+            </form>
+            </div>
         </div>
 `;
   popup.style.display = 'block';

@@ -1,5 +1,5 @@
 import renderCommments from '../modules/modal.js';
-import { LIKESURL, MOVIESURL } from './constants.js';
+import { COMMENTSURL, LIKESURL, MOVIESURL } from './constants.js';
 
 const fetchMovieData = async () => {
   const response = await fetch(MOVIESURL);
@@ -28,6 +28,23 @@ const postLike = async (id) => {
   return result;
 };
 
+const postComment = async (id,username,comment) => {
+  const response = await fetch(COMMENTSURL, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+      username: username,
+      comment: comment
+    })
+  })
+  const data = response.json();
+  const {result}=data;
+  return result;
+}
+
 const selectMovieDetails = async (id) => {
   const data = await fetchMovieData();
   data.forEach((movie) => {
@@ -42,4 +59,5 @@ export {
   fetchLikes,
   postLike,
   selectMovieDetails,
+  postComment,
 };
