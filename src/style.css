@@ -7,7 +7,8 @@ body {
 img {
   width: 100%;
 }
-a{
+
+a {
   text-decoration: none;
   color: gray;
 }
@@ -36,7 +37,7 @@ textarea {
   width: 100%;
 }
 
-header{
+header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -103,9 +104,8 @@ header{
   margin-top: 10px;
 }
 
-.btn-wrapper{
+.btn-wrapper {
   align-self: flex-start;
-
 }
 
 .btn:hover {
@@ -137,21 +137,21 @@ header{
   height: 500px;
 }
 
-.fa-times{
+.fa-times {
   position: fixed;
-  right:15%;
+  right: 15%;
   top: 10%;
 }
 
-.logo-container{
+.logo-container {
   width: 100px;
 }
 
-#logo{
+#logo {
   height: 50px;
 }
 
-.movie-data{
+.movie-data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,22 +162,23 @@ header{
 .form-cont {
   padding: 20px 0;
 }
-.form-cont h3{
+
+.form-cont h3 {
   text-align: center;
 }
 
-.comment-count{
+.comment-count {
   text-align: center;
   margin-top: 10px;
 }
 
-.movie-des{
+.movie-des {
   margin-top: 25px;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.comment-list{
+.comment-list {
   display: flex;
   width: 50%;
   margin: 0 auto;
@@ -187,7 +188,7 @@ header{
   height: 200px;
 }
 
-#movie-list{
+#movie-list {
   margin-top: 100px;
 }
 
@@ -199,19 +200,19 @@ header{
   margin: 0 auto;
 }
 
-.input, .text{
+.input,
+.text {
   align-self: flex-start;
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-footer{
+footer {
   text-align: center;
   padding: 10px;
   border: 1px solid black;
 }
 
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 

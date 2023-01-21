@@ -4,6 +4,7 @@ import {
 import like from '../assets/likeIcon.png';
 import logoImg from '../assets/main-logo.png';
 import counter from './counter.js';
+import renderComments from './modal.js';
 
 const list = document.getElementById('list');
 const movie = document.getElementById('movie');
@@ -61,9 +62,10 @@ const render = async () => {
 
   const commentBtns = document.querySelectorAll('.btn');
   commentBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const id = btn.getAttribute('id');
-      selectMovieDetails(id);
+      const data = await selectMovieDetails(id);
+      renderComments(data);
     });
   });
 };

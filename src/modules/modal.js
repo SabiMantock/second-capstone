@@ -1,11 +1,10 @@
-// eslint-disable-next-line import/no-cycle
 import { postComment, getComments } from '../config/utils.js';
 import counter from './counter.js';
 
 const popup = document.querySelector('#myModal');
 const popupContent = document.querySelector('.modal-content');
 
-const renderCommments = (movie) => {
+const renderComments = (movie) => {
   popupContent.innerHTML = '';
   popupContent.innerHTML = `
           <div class="popup">
@@ -81,8 +80,6 @@ const renderCommments = (movie) => {
     }
     form.reset();
   });
-
-  // display comments
 };
 
-export default renderCommments;
+export default renderComments;
