@@ -1,5 +1,3 @@
-/* eslint-disable */
-import renderCommments from '../modules/modal.js';
 import {
   COMMENTSURL,
   DEETSURL,
@@ -50,12 +48,11 @@ const postComment = async (comment) => {
   });
   const data = response.json();
   const { result } = data;
-  console.log(result,comment)
   return result;
 };
 
-const getComments =  async (id) => {
-  const response = await fetch(COMMENTSURL + `?item_id=${id}`,{
+const getComments = async (id) => {
+  const response = await fetch(`${COMMENTSURL}?item_id=${id}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json',
@@ -63,11 +60,11 @@ const getComments =  async (id) => {
   });
   const data = await response.json();
   return data;
-}
+};
 
 const selectMovieDetails = async (id) => {
   const data = await fetchMovieDeets(id);
-  renderCommments(data);
+  return data;
 };
 
 export {

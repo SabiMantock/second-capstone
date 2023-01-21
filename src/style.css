@@ -8,6 +8,11 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: gray;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -32,16 +37,23 @@ textarea {
   width: 100%;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
 .topnav {
-  background-color: #333;
+  background-color: #ddd;
   display: flex;
   justify-content: space-between;
-  padding: 14px 16px;
+  padding: 5px 16px;
+  align-items: center;
 }
 
 .topnav a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
 }
 
 .topnav a.icon {
@@ -58,6 +70,7 @@ textarea {
 
 .image-wrapper {
   width: 300px;
+  margin: 0 auto;
 }
 
 .des {
@@ -88,6 +101,11 @@ textarea {
 
 .cBtn {
   padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.btn-wrapper {
+  align-self: flex-start;
 }
 
 .btn:hover {
@@ -113,21 +131,89 @@ textarea {
   margin: 50px auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 70%;
   border-radius: 20px;
   overflow: auto;
   height: 500px;
+}
+
+.fa-times {
+  position: fixed;
+  right: 15%;
+  top: 10%;
+}
+
+.logo-container {
+  width: 100px;
+}
+
+#logo {
+  height: 50px;
+}
+
+.movie-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .form-cont {
   padding: 20px 0;
 }
 
+.form-cont h3 {
+  text-align: center;
+}
+
+.comment-count {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.movie-des {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.comment-list {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: auto;
+  height: 200px;
+}
+
+#movie-list {
+  margin-top: 100px;
+}
+
 #form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.input,
+.text {
+  align-self: flex-start;
   margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 768px) {
