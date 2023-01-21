@@ -2,10 +2,12 @@ import {
   fetchLikes, fetchMovieData, postLike, selectMovieDetails,
 } from '../config/utils.js';
 import like from '../assets/likeIcon.png';
+import logoImg from '../assets/main-logo.png';
 import counter from './counter.js';
 
 const list = document.getElementById('list');
 const movie = document.getElementById('movie');
+const logo = document.getElementById('logo');
 
 const updateLikes = async () => {
   const data = await fetchLikes();
@@ -20,6 +22,7 @@ const updateLikes = async () => {
 const render = async () => {
   const data = await fetchMovieData();
   movie.innerHTML += `(${counter(data)})`;
+  logo.src = logoImg;
   counter(data);
   data.forEach(({ '#TITLE': title, '#IMG_POSTER': poster, '#IMDB_ID': id }) => {
     list.innerHTML += `
@@ -34,6 +37,7 @@ const render = async () => {
                             <img src=${like} alt='like'/>
                         </div>
                         <p id=count-${id}></p>
+                        <p>likes</p>
                     </div>
                 </div>
                 <div>

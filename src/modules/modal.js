@@ -15,7 +15,7 @@ const renderCommments = (movie) => {
                 <img class="img" src="${movie.short.image}" alt="movie"/>
               </div>
               <div>
-                <h3>${movie.short.name}</h3>
+                <h3 class='movie-des'>${movie.short.name}</h3>
                 <p>${movie.short.description}
               </div>
               
@@ -32,8 +32,10 @@ const renderCommments = (movie) => {
                 <div class='text'>
                   <textarea name="comment" id="comment" cols="30" rows="10" placeholder="your comment here..."></textarea>
                 </div>
-                <div>
-                  <button type="submit" class="btn cBtn">Comment</button>
+                <div class='btn-wrapper'>
+              
+                <button type="submit" class="btn cBtn">Comment</button>
+               
                 </div>
               </form>
             </div>
@@ -54,10 +56,10 @@ const renderCommments = (movie) => {
     commentList.innerHTML = '';
     const commentCount = document.querySelector('.comment-count');
     commentCount.innerHTML = `Comments(${counter(comments)})`;
-    comments.forEach(({ username, comment }) => {
+    comments.forEach(({ username, comment, creation_date: date }) => {
       commentList.innerHTML += `
       <li>
-      ${username}: ${comment}
+      ${date} - ${username}: ${comment}
       </li>
       `;
     });
