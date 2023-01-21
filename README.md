@@ -28,7 +28,7 @@
 
 # 📖 Javascript Group Capstone <a name="about-project"></a>
 
-> In this project, a website for movies is being build. The external API used for showing movies and its details is [TVmaze API](https://www.tvmaze.com/api).
+> In this project, a website for movies is being build. The external API used for showing movies and its details is [IMDBbOT](https://github.com/SpEcHiDe/IMDbOT/wiki).
 > The webapp has 2 user interfaces.
 
 - A home page showing a list of movies items that you can interact with the like button

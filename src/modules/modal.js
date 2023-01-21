@@ -58,7 +58,7 @@ const renderComments = (movie) => {
     comments.forEach(({ username, comment, creation_date: date }) => {
       commentList.innerHTML += `
       <li>
-      ${date} - ${username}: ${comment}
+      ${date} ${username}: ${comment}
       </li>
       `;
     });
@@ -71,7 +71,7 @@ const renderComments = (movie) => {
     const name = document.getElementById('name').value;
     const comment = document.getElementById('comment').value;
     if (name !== '' || comment !== '') {
-      postComment({
+      await postComment({
         item_id: movie.imdbId,
         username: name,
         comment,
